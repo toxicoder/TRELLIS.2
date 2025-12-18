@@ -1,0 +1,8 @@
+.git
+.gitignore
+__pycache__
+tmp
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
