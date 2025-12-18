@@ -44,6 +44,9 @@ RUN pip install --no-cache-dir git+https://github.com/EasternJournalist/utils3d.
 # Flash Attention
 RUN pip install --no-cache-dir flash-attn==2.7.3
 
+# Set TORCH_CUDA_ARCH_LIST for building extensions
+ENV TORCH_CUDA_ARCH_LIST="8.0;8.6;8.9;9.0"
+
 # Extensions
 WORKDIR /tmp/extensions
 
