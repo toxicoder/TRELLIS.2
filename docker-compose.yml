@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    image: ghcr.io/toxicoder/trellis.2:latest
+    ports:
+      - "${GRADIO_SERVER_PORT:-7860}:7860"
+    environment:
+      - GRADIO_SERVER_NAME=${GRADIO_SERVER_NAME:-0.0.0.0}
+      - OPENCV_IO_ENABLE_OPENEXR=${OPENCV_IO_ENABLE_OPENEXR:-1}
+      - PYTORCH_CUDA_ALLOC_CONF=${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    volumes:
+      - .:/app
+    command: python app.py

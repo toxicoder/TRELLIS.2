@@ -99,6 +99,41 @@ Data processing is streamlined for instant conversions that are fully **renderin
         --nvdiffrec             Install nvdiffrec
     ```
 
+### Docker Deployment
+
+We provide a Dockerfile to ease the installation process. You can build the image yourself or use the pre-built image from GitHub Container Registry.
+
+#### Using Docker Compose (Recommended)
+
+1.  Clone the repository and submodules:
+    ```sh
+    git clone -b main https://github.com/microsoft/TRELLIS.2.git --recursive
+    cd TRELLIS.2
+    ```
+
+2.  (Optional) Create a `.env` file from the example:
+    ```sh
+    cp .env.example .env
+    ```
+
+3.  Run the container:
+    ```sh
+    docker compose up --build
+    ```
+    The app will be available at `http://localhost:7860`.
+
+#### Manual Docker Build
+
+1.  Build the image:
+    ```sh
+    docker build -t trellis2 .
+    ```
+
+2.  Run the container:
+    ```sh
+    docker run --gpus all -p 7860:7860 trellis2
+    ```
+
 ## 📦 Pretrained Weights
 
 The pretrained model **TRELLIS.2-4B** is available on Hugging Face. Please refer to the model card there for more details.
