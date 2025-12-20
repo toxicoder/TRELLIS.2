@@ -48,7 +48,7 @@ RUN pip install --no-cache-dir flash-attn==2.7.3
 ENV TORCH_CUDA_ARCH_LIST="8.0;8.6;8.9;9.0"
 
 # Limit parallel jobs to avoid OOM
-ENV MAX_JOBS=4
+ENV MAX_JOBS=2
 
 # Extensions
 WORKDIR /tmp/extensions
