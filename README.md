@@ -66,7 +66,7 @@ Data processing is streamlined for instant conversions that are fully **renderin
 ### Installation Steps
 1. Clone the repo:
     ```sh
-    git clone -b main https://github.com/microsoft/TRELLIS.2.git --recursive
+    git clone -b main https://github.com/toxicoder/TRELLIS.2.git --recursive
     cd TRELLIS.2
     ```
 
@@ -107,7 +107,8 @@ We provide a Dockerfile to ease the installation process. You can build the imag
 
 1.  Clone the repository and submodules:
     ```sh
-    git clone -b main https://github.com/microsoft/TRELLIS.2.git --recursive
+    
+    git clone -b main https://github.com/toxicoder/TRELLIS.2.git --recursive
     cd TRELLIS.2
     ```
 
