@@ -55,7 +55,7 @@ WORKDIR /tmp/extensions
 
 # nvdiffrast
 RUN git clone -b v0.4.0 https://github.com/NVlabs/nvdiffrast.git nvdiffrast && \
-    pip install ./nvdiffrast --no-build-isolation
+    MAX_JOBS=4 pip install ./nvdiffrast --no-build-isolation
 
 # nvdiffrec
 RUN git clone -b renderutils https://github.com/JeffreyXiang/nvdiffrec.git nvdiffrec && \
